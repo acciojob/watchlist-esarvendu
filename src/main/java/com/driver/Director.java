@@ -1,7 +1,7 @@
 package com.driver;
 
-public class Directer {
-    public Directer(String name, int numberOfMovies, double imdbRating) {
+public class Director {
+    public Director(String name, int numberOfMovies, double imdbRating) {
         this.name = name;
         this.numberOfMovies = numberOfMovies;
         this.imdbRating = imdbRating;
@@ -10,7 +10,7 @@ public class Directer {
     private   String name;
     private int numberOfMovies;
     private double imdbRating;
-    public Directer(){
+    public Director(){
 
     }
 
