@@ -1,9 +1,9 @@
 package com.driver;
 
-import java.util.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MovieService {
@@ -12,38 +12,38 @@ public class MovieService {
     MovieRepository movieRepository;
 
     public void addMovie(Movie movie){
-        movieRepository.saveMovie(movie);
+        movieRepository.addMovie(movie);
     }
 
     public void addDirector(Director director){
-        movieRepository.saveDirector(director);
+        movieRepository.addDirector(director);
     }
 
-    public void createMovieDirectorPair(String movie, String director){
-        movieRepository.saveMovieDirectorPair(movie, director);
+    public void addMovieDirectorPair(String movie,String director){
+        movieRepository.addMovieDirectorPair(movie,director);
     }
 
-    public Movie findMovie(String movieName){
-        return movieRepository.findMovie(movieName);
+    public Movie getMovieByName(String name){
+        return movieRepository.getMovieByName(name);
     }
 
-    public Director findDirector(String directorName){
-        return movieRepository.findDirector(directorName);
+    public Director getDirectorByName(String name){
+        return movieRepository.getDirectorByName(name);
     }
 
-    public List<String> findMoviesFromDirector(String director){
-        return movieRepository.findMoviesFromDirector(director);
+    public List<String> getMoviesByDirectorNAme(String name){
+        return movieRepository.getMoviesByDirectorName(name);
     }
 
     public List<String> findAllMovies(){
         return movieRepository.findAllMovies();
     }
 
-    public void deleteDirector(String director){
-        movieRepository.deleteDirector(director);
+    public void deleteDirectorByName(String name){
+        movieRepository.deleteDirectorByName(name);
     }
 
     public void deleteAllDirectors(){
-        movieRepository.deleteAllDirector();
+        movieRepository.deleteAllDirectors();
     }
 }
